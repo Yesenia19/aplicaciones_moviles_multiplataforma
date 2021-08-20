@@ -78,9 +78,8 @@ class _WritePageState extends State<WritePage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-            title: Text('*****Felicidades*****'),
             content: Text(
-                "Felicidades se envio correctamente a la Agenda"));
+                "Datos almacenados correctamente"));
       },
     );
   }
@@ -101,9 +100,7 @@ class _WritePageState extends State<WritePage> {
 
       var data = {'nombre': nombre, 'email': email};
       final response = await http.post(url, body: json.encode(data));
-      if (response.statusCode == 200) {
-        print('se envio correctamente');
-      }
+      
     } catch (error) {
       print(error.toString());
     }
